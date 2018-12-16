@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="StudentsCompetitionSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SCS_Catogary">
+          <Key>
+            <PropertyRef Name="类型ID" />
+          </Key>
+          <Property Name="类型ID" Type="int" Nullable="false" />
+          <Property Name="类型名称" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SCS_Competition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="类型ID" Type="int" Nullable="false" />
+          <Property Name="名称" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="学院" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="内容" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="发布时间" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="截止时间" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="逻辑删除" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SCS_Login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="学号" Type="int" />
+          <Property Name="密码" Type="varchar" MaxLength="50" />
+          <Property Name="姓名" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SCS_Teacher">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="姓名" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="职工号" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SCS_TeacherLogin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="姓名" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="职工号" Type="int" Nullable="false" />
+          <Property Name="密码" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="StudentsCompetitionSystemModelStoreContainer">
+          <EntitySet Name="SCS_Catogary" EntityType="Self.SCS_Catogary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCS_Competition" EntityType="Self.SCS_Competition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCS_Login" EntityType="Self.SCS_Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCS_Teacher" EntityType="Self.SCS_Teacher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCS_TeacherLogin" EntityType="Self.SCS_TeacherLogin" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StudentsCompetitionSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SCS_Catogary">
+          <Key>
+            <PropertyRef Name="类型ID" />
+          </Key>
+          <Property Name="类型ID" Type="Int32" Nullable="false" />
+          <Property Name="类型名称" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SCS_Competition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="类型ID" Type="Int32" Nullable="false" />
+          <Property Name="名称" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="学院" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="内容" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="发布时间" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="截止时间" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="逻辑删除" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SCS_Login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="学号" Type="Int32" />
+          <Property Name="密码" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="姓名" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SCS_Teacher">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="姓名" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="职工号" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="StudentsCompetitionSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SCS_Catogary" EntityType="Self.SCS_Catogary" />
+          <EntitySet Name="SCS_Competition" EntityType="Self.SCS_Competition" />
+          <EntitySet Name="SCS_Login" EntityType="Self.SCS_Login" />
+          <EntitySet Name="SCS_Teacher" EntityType="Self.SCS_Teacher" />
+          <EntitySet Name="SCS_TeacherLogin" EntityType="StudentsCompetitionSystemModel.SCS_TeacherLogin" />
+        </EntityContainer>
+        <EntityType Name="SCS_TeacherLogin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="姓名" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="职工号" Type="Int32" Nullable="false" />
+          <Property Name="密码" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StudentsCompetitionSystemModelStoreContainer" CdmEntityContainer="StudentsCompetitionSystemEntities">
+          <EntitySetMapping Name="SCS_Catogary">
+            <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_Catogary">
+              <MappingFragment StoreEntitySet="SCS_Catogary">
+                <ScalarProperty Name="类型ID" ColumnName="类型ID" />
+                <ScalarProperty Name="类型名称" ColumnName="类型名称" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCS_Competition">
+            <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_Competition">
+              <MappingFragment StoreEntitySet="SCS_Competition">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="类型ID" ColumnName="类型ID" />
+                <ScalarProperty Name="名称" ColumnName="名称" />
+                <ScalarProperty Name="学院" ColumnName="学院" />
+                <ScalarProperty Name="内容" ColumnName="内容" />
+                <ScalarProperty Name="发布时间" ColumnName="发布时间" />
+                <ScalarProperty Name="截止时间" ColumnName="截止时间" />
+                <ScalarProperty Name="逻辑删除" ColumnName="逻辑删除" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCS_Login">
+            <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_Login">
+              <MappingFragment StoreEntitySet="SCS_Login">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="学号" ColumnName="学号" />
+                <ScalarProperty Name="密码" ColumnName="密码" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCS_Teacher">
+            <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_Teacher">
+              <MappingFragment StoreEntitySet="SCS_Teacher">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="职工号" ColumnName="职工号" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCS_TeacherLogin">
+            <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_TeacherLogin">
+              <MappingFragment StoreEntitySet="SCS_TeacherLogin">
+                <ScalarProperty Name="密码" ColumnName="密码" />
+                <ScalarProperty Name="职工号" ColumnName="职工号" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
