@@ -1,8 +1,6 @@
 ﻿
 @{
-    /**/
-
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Register";
 }
 
 <!doctype html>
@@ -36,11 +34,11 @@
     <div class="wrapper">
 
         <div class="container">
-            <h1>Welcome</h1>
+            <h1>首次登陆需要修改密码</h1>
             <form class="form">
-                <input type="text" id="username" placeholder="账号" name="username">
-                <input type="password" id="password" placeholder="密码" name="password">
-                <button type="button" id="login-button">登陆</button>
+                <input type="password" id="password_1" placeholder="新密码" name="password_1">
+                <input type="password" id="password_2" placeholder="确认密码" name="password_2">
+                <button type="button" id="login-button">确定</button>
             </form>
             <p align="center" id="my_error"></p>
         </div>
@@ -63,39 +61,37 @@
     <script type="text/javascript" src="~/Scripts/jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
         $('#login-button').click(function () {
-            if ($("#username").val() == "") {
-                $("#my_error").text("请输入账号");
+            var pas1, pas2;
+            password_1 = document.getElementById("password_1").value;
+            password_2 = document.getElementById("password_2").value;
+            if (password_1.length < 6) {
+                $("#my_error").text("密码必须6位以上");
                 return false;
             }
 
-            if ($("#password").val() == "") {
-                $("#my_error").text("请输入密码");
+            if (!(password_1 == password_2 && password_2 != '')) {
+                alert("两次输入的密码不一致，请重新输入！");
                 return false;
             }
+
             $.ajax({
-                url: "/Login/CheckPower",
+                url: "/Login/CheckPower_Register",
                 type: "post",
                 dataType: "json",
                 contentType: "application/json",
                 data: JSON.stringify({
-                    "username_v": $("#username").val(),
-                    "password_v": $("#password").val()
+                    "password_1": $("#password_1").val()
                 }),
                 success: function (data) {
                     if (data) {
-                        event.preventDefault();
-                        $('form').fadeOut(500);
-                        $('.wrapper').addClass('form-success');
-                        window.location.replace("/Login/Register");
+                        window.location.replace("/Login/test");
                     }
                     else {
-                        $("#my_error").text("密码错误或账号不存在");
+                        $("#my_error").text("404错误");
                     }
 
                 }
             });
-
-
 
         });
     </script>
@@ -104,4 +100,3 @@
 
 </body>
 </html>
-
