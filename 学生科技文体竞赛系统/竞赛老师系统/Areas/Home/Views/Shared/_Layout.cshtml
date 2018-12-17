@@ -10,16 +10,16 @@
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
-   <link rel="shortcut icon" href="favicon.ico">
-        @*<link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    @*<link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
         <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/style.css?v=4.1.0" rel="stylesheet">*@
 
-    <link href="~/css/bootstrap.min.css?v=3.3.6" rel="stylesheet" />
-    <link href="~/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" />
-    <link href="~/css/style.css?v=4.1.0" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/css/animate.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
 
 
 </head>
@@ -511,7 +511,7 @@
                 </nav>
             </div>
             <div class="row J_mainContent" id="content-main">
-                 </div>
+            </div>
         </div>
         <!--右侧部分结束-->
     </div>
@@ -523,25 +523,27 @@
         <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
         <script src="js/plugins/layer/layer.min.js"></script>*@
 
-    <script src="~/Scripts/plugins/layer/layer.min.js"></script>
-    <script src="~/Scripts/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="~/Scripts/bootstrap.min.js?v=3.3.6"></script>
-    <script src="~/Scripts/jquery.min.js?v=2.1.4"></script>
+    <script src="~/Scripts/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Scripts/plugins/layer/layer.min.js"></script>
 
+    <script src="~/Scripts/hAdmin.js?v=4.1.0"></script>
     <!-- 自定义js -->
     @*<script src="js/hAdmin.js?v=4.1.0"></script>
         <script type="text/javascript" src="js/index.js"></script>*@
 
-    <script src="~/Scripts/hAdmin.js"></script>
+
     <script type="text/javascript" src="~/Scripts/index.js"></script>
     <!-- 第三方插件 -->
     @*<script src="js/plugins/pace/pace.min.js"></script>*@
-    <script src="~/Scripts/plugins/pace/pace.min.js"></script>
+    @*<script src="~/Scripts/plugins/pace/pace.min.js"></script>*@
+
+
+
 
     @RenderBody()
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
 </body>
