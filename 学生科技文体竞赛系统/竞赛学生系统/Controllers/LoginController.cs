@@ -18,7 +18,7 @@ namespace 竞赛学生系统.Controllers
             return View();
         }
 
-        public ActionResult test()
+        public ActionResult index_i()
         {
 
             return View();
