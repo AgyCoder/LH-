@@ -1,0 +1,375 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style type="text/css">
+    .mylabel {
+        font-size: large;
+        font-weight: bold;
+        padding: 0;
+        width: 5em;
+        margin-bottom: 0px;
+        margin-left: 7em;
+    }
+</style>
+
+
+
+
+
+<div class="modal fade" id="queryInfo2" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalTitle">修改基本信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group" id="model1">
+                    <span class="input-group-addon">&nbsp;&nbsp;姓&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;&nbsp;</span>
+                    <input type="text" class="form-control my_input"
+                           id="input1" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <br />
+                <div class="input-group" id="model2">
+                    <span class="input-group-addon">&nbsp;&nbsp;籍&nbsp;&nbsp;&nbsp;&nbsp;贯&nbsp;&nbsp;</span>
+                    <input type="text" class="form-control"
+                           id="input2" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <br />
+                <div class="input-group" id="model3">
+                    <span class="input-group-addon">手机号码</span>
+                    <input type="text" class="form-control"
+                           id="input3" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <div class="input-group" id="model3" style=" display:none">
+                    <input type="text" class="form-control"
+                           id="input4">
+                </div>
+                <br />
+
+                <div class="input-group" id="model3">
+                    <span class="input-group-addon">办公地址</span>
+                    <input type="text" class="form-control"
+                           id="input3" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <div class="input-group" id="model3" style=" display:none">
+                    <input type="text" class="form-control"
+                           id="input4">
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-success" id="btn_Info" value="1">提交</button>
+                    <button type="button" class="btn btn-default" id="myclose"
+                            data-dismiss="modal">
+                        关闭
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+</div>
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="panel panel-default" style="margin-top: 60px;margin-right:30px;margin-left:20px">
+        <h1 class="panel-heading" style="background-color:white">个人信息</h1>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="panel panel-default" style="margin-top: 20px;margin-right:30px;margin-left:20px">
+        <br />
+        <br />
+        <label class="control-label col-sm-1 mylabel" for="txt_search_statu" style="font-size:18px; margin-top: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名</label>
+        <div class="col-sm-4">
+            <input id="name" name="name" type="text" readonly="readonly" class="form-control fl re-search" style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
+        </div>
+        <br />
+        <br />
+        <br />
+        <label class="control-label col-sm-2 mylabel" for="txt_search_statu" style="font-size:18px; margin-top: 5px;">&nbsp;&nbsp;&nbsp;手机号码</label>
+        <div class="col-sm-4">
+            <input id="tel" name="tel" type="text" readonly="readonly" class="form-control fl re-search " style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
+        </div>
+        <br />
+        <br />
+        <br />
+        <label class="control-label col-sm-2 mylabel" for="txt_search_statu" style="font-size:18px; margin-top: 5px;">邮箱</label>
+        <div class="col-sm-4">
+            <input id="IDCard" name="IDCard" type="text" readonly="readonly" class="form-control fl re-search" style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
+        </div>
+        <br />
+        <br />
+        <label class="control-label col-sm-2 mylabel" for="txt_search_statu" style="font-size:18px; margin-top: 5px;">办公地址</label>
+        <div class="col-sm-4">
+            <input id="IDCard" name="IDCard" type="text" readonly="readonly" class="form-control fl re-search" style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
+        </div>
+
+
+
+
+
+        <div class="row  clearfix">
+            <div class="span10 offset2" style="text-align:right;margin-right:10%">
+                <input type="button" name="submit" id="my_Info" class="btn btn-warning" value="修改基本信息" data-toggle="tooltip" data-placement="top" title="不包含密码">
+                <input type="button" name="submit" id="my_btn" class="btn btn-danger" value="修改密码" style="margin-left: 200px" ; data-toggle="tooltip" data-placement="left" title="修改密码">
+            </div>
+            <br />
+            <br />
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $.ajax({
+            type: "POST",//请求方式
+            url: '/UserInfo/View_UserInfo/Checkpwd',
+            dataType: "json",
+            data: {
+                "pwd": $("#Oldpwd").val(),
+            },
+            success: function (data) {
+                if (data) {
+                    
+                }
+            }
+        });
+
+
+
+        $("#btn_edit").click(function () {
+            if (document.all.btn_edit.value == 1) {
+                $.ajax({
+                    type: "POST",//请求方式
+                    url: '/UserInfo/View_UserInfo/Checkpwd',
+                    dataType: "json",
+                    data: {
+                        "pwd": $("#Oldpwd").val(),
+                    },
+                    success: function (data) {
+                        if (data) {
+                            $("#old").hide();
+                            $("#new").show();
+                            $("#_new").show();
+                            document.all.btn_edit.value = "2";
+                        }
+                        else {
+                            $('#Oldpwd').popover('show');
+                            $('#Oldpwd').popover();
+                            var t = setTimeout("$('#Oldpwd').popover('destroy');", 3000);
+                            $("#old").addClass("has-warning");
+                        }
+                    }
+                });
+            }
+            else if (document.all.btn_edit.value == 2 && $("#Newpwd").val() == $("#_Newpwd").val()) {
+                $.ajax({
+                    type: "POST",//请求方式
+                    url: '/UserInfo/View_UserInfo/Edit_pwd',
+                    dataType: "json",
+                    data: {
+                        "pwd": $("#Newpwd").val(),
+                    },
+                    success: function (data) {
+                        if (data) {
+                            $('#queryInfo1').modal('hide');
+                            toastr.success("修改成功");
+                            $("#new").hide();
+                            $("#old").show();
+                            $("#_new").hide();
+                            document.all.btn_edit.value = "1";
+                            $("#old").removeClass("has-warning");
+                            $("#new").removeClass("has-warning");
+                            $("#_new").removeClass("has-warning");
+                            $("#Oldpwd").val("");
+                            $("#Newpwd").val("");
+                            $("#_Newpwd").val("");
+                        }
+
+                    }
+                });
+            }
+            else if ($("#Newpwd").val() != $("#_Newpwd").val()) {
+                $('#_Newpwd').popover('show');
+                $('#_Newpwd').popover();
+                var t = setTimeout("$('#Oldpwd').popover('destroy');", 3000);
+                $("#new").addClass("has-warning");
+                $("#_new").addClass("has-warning");
+                return false;
+            }
+        });
+        $("#myclose").click(function () {
+            for (var r = 1; i <= 5; i++)
+                $("#car" + r).hide();
+        });
+
+
+        $("#my_submit").click(function () {
+            $('#queryInfo3').modal('show');
+            $.ajax({
+                type: "POST",//请求方式
+                url: '/UserInfo/View_UserInfo/GetExamineMsg',
+                dataType: "json",
+                data: {
+                },
+                success: function (data) {
+                    var num = 1;
+                    var car_num = 1;
+                    for (var r in data) {
+                        var msg = data[r];
+                        var i = 1;
+                        for (var item in data[r]) {
+                            if (num == 1) {
+                                if (i == 5) {
+                                    $("#examine_input" + i).attr("src", msg[item] + '?' + Math.random())
+                                }
+                                else {
+                                    $("#examine_input" + i).val(msg[item]);
+
+                                }
+                                i++;
+                            }
+                            else {
+                                if (i == 1) {
+                                    $("#car_input" + car_num).val(msg[item]);
+                                }
+                                else if (i == 2) {
+                                    $("#car_f" + car_num).attr("src", msg[item] + '?' + Math.random());
+                                }
+                                else {
+                                    $("#car_b" + car_num).attr("src", msg[item] + '?' + Math.random());
+                                    $("#car" + car_num).show();
+                                }
+                                i++;
+                                if (i > 3) {
+                                    i = 1;
+                                    car_num++;
+                                }
+                            }
+                        }
+                        num++;
+
+                    }
+                }
+            });
+        });
+
+        $("#my_btn").click(function () {
+            document.all.btn_edit.value = "1";
+            $("#new").hide();
+            $("#old").show();
+            $("#_new").hide();
+            $("#old").removeClass("has-warning");
+            $("#new").removeClass("has-warning");
+            $("#_new").removeClass("has-warning");
+            $("#Oldpwd").val("");
+            $("#Newpwd").val("");
+            $("#_Newpwd").val("");
+            $('#Oldpwd').popover('destroy');
+            $('#_Newpwd').popover('destroy');
+            $('#queryInfo1').modal('show');
+        });
+
+
+        $("#my_Info").click(function () {
+           
+            for (var item = 1; item <= 3; item++) {
+                $("#input" + item).val("");
+                $("#model" + item).removeClass("has-warning");
+                $("#model" + item).removeClass("has-success");
+            }
+            $('#queryInfo2').modal('show');
+            $("#input1").val($("#name").val());
+            $("#input2").val($("#place").val());
+            $("#input3").val($("#tel").val());
+            $("#input4").val($(".img-responsive")[0].src);
+            $("#photo").attr("src", $(".img-responsive")[0].src);
+        });
+
+
+
+
+
+       
+
+
+
+        $("#btn_Info").click(function () {
+            var msg = {
+                姓名: $("#input1").val(),
+                手机号码: $("#input3").val(),
+                籍贯: $("#input2").val(),
+                身份证照片: $("#input4").val(),
+            };
+            var error = 0;
+            for (var item = 1; item <= 3; item++) {
+                var str = "#input" + item;
+                if ($(str).val() == "") {
+                    $("#model" + item).addClass("has-warning");
+                    $(str).popover('show');
+                    $(str).popover();
+                    error++;
+                }
+                else {
+                    $("#model" + item).removeClass("has-warning");
+                    $("#model" + item).addClass("has-success");
+                }
+            }
+            setTimeout("$('#input1').popover('destroy')", 3000);
+            setTimeout("$('#input3').popover('destroy')", 3000);
+            setTimeout("$('#input2').popover('destroy')", 3000);
+            if (error == 0) {
+                $.ajax({
+                    type: "POST",//请求方式
+                    url: '/UserInfo/View_UserInfo/NewEdit',
+                    dataType: "json",
+                    data: {
+                        "msg": msg
+                    },
+                    success: function (data) {
+                        $(".img-responsive").attr("src", data);
+                        $('#queryInfo2').modal('hide');
+                        parent.location.reload();
+                    }
+                });
+            }
+            else {
+                return false;
+            }
+        });
+
+    });
+</script>
+
+
+
