@@ -1,0 +1,350 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+//模态框
+<div class="modal fade" id="queryInfo2" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalTitle">修改基本信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group" id="model1">
+                    <span class="input-group-addon">&nbsp;&nbsp;姓&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;&nbsp;</span>
+                    <input type="text" class="form-control my_input"
+                           id="input1" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <br />
+                <div class="input-group" id="model2">
+                    <span class="input-group-addon">&nbsp;&nbsp;籍&nbsp;&nbsp;&nbsp;&nbsp;贯&nbsp;&nbsp;</span>
+                    <input type="text" class="form-control"
+                           id="input2" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <br />
+                <div class="input-group" id="model3">
+                    <span class="input-group-addon">手机号码</span>
+                    <input type="text" class="form-control"
+                           id="input3" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <div class="input-group" id="model3" style=" display:none">
+                    <input type="text" class="form-control"
+                           id="input4">
+                </div>
+                <br />
+
+                <div class="input-group" id="model3">
+                    <span class="input-group-addon">办公地址</span>
+                    <input type="text" class="form-control"
+                           id="input3" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <div class="input-group" id="model3" style=" display:none">
+                    <input type="text" class="form-control"
+                           id="input4">
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-success" id="btn_Info" value="1">提交</button>
+                    <button type="button" class="btn btn-default" id="myclose"
+                            data-dismiss="modal">
+                        关闭
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <br />
+    <div class="panel panel-default" style="margin-top: 0;margin-right:30px;margin-left:20px">
+        <h1 class="panel-heading" style="background-color:deepskyblue">审查报名</h1>
+    </div>
+
+</div>
+
+<div class="modal fade" id="queryInfo2" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalTitle">修改基本信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group" id="model1">
+                    <span class="input-group-addon">&nbsp;&nbsp;姓&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;&nbsp;</span>
+                    <input type="text" class="form-control my_input"
+                           id="input1" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <br />
+                <div class="input-group" id="model2">
+                    <span class="input-group-addon">&nbsp;&nbsp;籍&nbsp;&nbsp;&nbsp;&nbsp;贯&nbsp;&nbsp;</span>
+                    <input type="text" class="form-control"
+                           id="input2" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <br />
+                <div class="input-group" id="model3">
+                    <span class="input-group-addon">手机号码</span>
+                    <input type="text" class="form-control"
+                           id="input3" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <div class="input-group" id="model3" style=" display:none">
+                    <input type="text" class="form-control"
+                           id="input4">
+                </div>
+                <br />
+
+                <div class="input-group" id="model3">
+                    <span class="input-group-addon">办公地址</span>
+                    <input type="text" class="form-control"
+                           id="input3" data-toggle="popover"
+                           data-content="不能为空"
+                           data-placement="bottom">
+                </div>
+                <div class="input-group" id="model3" style=" display:none">
+                    <input type="text" class="form-control"
+                           id="input4">
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-success" id="btn_Info" value="1">提交</button>
+                    <button type="button" class="btn btn-default" id="myclose"
+                            data-dismiss="modal">
+                        关闭
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+</div>
+
+<div>
+
+    <div class="form-group" style="float:right;margin-right:50px">
+        <div class="col-md-8" style="margin-top:10px">
+            <input type="text" class="form-control" placeholder="报名人员名称" id="toll">
+        </div>
+        <div class="col-md-2">
+            <input type="button" name="submit" id="search" class="btn btn-info" value="搜索">
+        </div>
+    </div>
+    <div id="toolbar" class="btn-group">
+        <a href="~/Examination/Index/adopt" class="create">
+            <input type="button" name="submit" id="Have_passed" class="btn btn-info" value="查看已通过的">
+        </a> 
+        <input type="button" name="submit" id="Have_P" class="btn btn-info" value="查看">
+    </div>
+
+    <div class="panel panel-default" id="my_tb" style="margin-right:30px;margin-left:20px">
+        <table id="tb_departments" style=" font-size:large"></table>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $(function () {
+
+            //1.初始化Table
+            var oTable = new TableInit();
+            oTable.Init();
+
+            //2.初始化Button的点击事件
+            var oButtonInit = new ButtonInit();
+            oButtonInit.Init();
+
+        });
+
+
+        var TableInit = function () {
+            var oTableInit = new Object();
+            //初始化Table
+            oTableInit.Init = function () {
+                $('#tb_departments').bootstrapTable({
+                    url: '/Examination/Index/Table',         //请求后台的URL（*）
+                    method: 'get',                      //请求方式（*）
+                    toolbar: '#toolbar',                //工具按钮用哪个容器
+                    striped: true,                      //是否显示行间隔色
+                    cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+                    pagination: true,                   //是否显示分页（*）
+                    sortable: true,                     //是否启用排序
+                    sortOrder: "asc",                   //排序方式
+                    sortStable: true,
+                    queryParams: oTableInit.queryParams,//传递参数（*）
+                    sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
+                    pageNumber: 1,                       //初始化加载第一页，默认第一页
+                    pageSize: 10,                       //每页的记录行数（*）
+                    pageList: [10],                     //可供选择的每页的行数（*）
+                    search: false,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+                    strictSearch: true,
+                    showColumns: true,                  //是否显示所有的列
+                    showRefresh: true,                  //是否显示刷新按钮
+                    minimumCountColumns: 1,             //最少允许的列数
+                    clickToSelect: true,                //是否启用点击选中行
+                    uniqueId: "id",                     //每一行的唯一标识，一般为主键列
+                    showToggle: false,                    //是否显示详细视图和列表视图的切换按钮
+                    cardView: false,                    //是否显示详细视图
+                    detailView: false,                   //是否显示父子表
+                    columns: [
+                        {
+                            field: '姓名',
+                            title: '姓名'
+                        }, {
+                            field: '班级',
+                            title: '班级'
+                        }, {
+                            field: '学号',
+                            title: '学号',
+                        }, {
+                            field: '电话',
+                            title: '电话'
+                        }, {
+                            field: '学年成绩',
+                            title: '成绩',
+                            formatter: operation
+                        },]
+                });
+            };
+            operation = function (value, row, index) {
+                return '<input type="button" name="submit" id="bt_Detailed" class="btn btn-primary" value="详细"style="margin-top:0"></a>' +
+                    '<input type="button" name="submit" id="bt_Via" class="btn btn-success" value="通过"style="margin-top:0"></a>' +
+                    '<input type="button" name="submit" id="bt_Retrea" class="b btn btn-inverse" value="退回"style="margin-top:0"></a>';
+            }
+            
+            $("#search").click(function () {
+                $('#tb_departments').bootstrapTable('refresh', {
+                    id: $("#toll").val()
+                });
+            })
+
+            $('#Have_P').click(function () {
+                
+                $.ajax({
+                    url: "/Examination/Index/Via ",
+                    type: "post",
+                    dataType: "json",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        "row_id": 2,
+                    }),
+                    success: function (data) {
+                        if (data) {
+                            alert("1！")
+                        }
+                        else {
+                            alert("操作失败！")
+                        }
+
+                    }
+                });
+                
+            });
+
+            $('#bt_Via').click(function () {
+
+                $.ajax({
+                    url: "/Examination/Index/Detailed ",
+                    type: "post",
+                    dataType: "json",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        "row_id": $("#row.id").val(),
+                    }),
+                    success: function (data) {
+                        if (data) {
+                            alert("成功！");
+                        }
+                        else {
+                            alert("操作失败！");
+                        }
+
+                    }
+                });
+
+            });
+
+            $('#bt_Retrea').click(function () {
+                alert("成功！");
+                $.ajax({
+                    url: "/Index/Detailed ",
+                    type: "post",
+                    dataType: "json",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        "row_id": $("#row.id").val(),
+                    }),
+                    success: function (data) {
+                        if (data) {
+                            alert("成功！");
+                        }
+                        else {
+                            alert("操作失败！");
+                        }
+
+                    }
+                });
+
+            });
+
+            //得到查询的参数
+            oTableInit.queryParams = function (params) {
+                var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+                    limit: params.limit,   //页面大小
+                    offset: params.offset,  //页码
+                    id: $("#toll").val()
+                };
+                return temp;
+            };
+            return oTableInit;
+
+
+            $("#bt_Detailed").click(function () {
+
+                for (var item = 1; item <= 3; item++) {
+                    $("#input" + item).val("");
+                    $("#model" + item).removeClass("has-warning");
+                    $("#model" + item).removeClass("has-success");
+                }
+                $('#queryInfo2').modal('show');
+                $("#input1").val($("#name").val());
+                $("#input2").val($("#place").val());
+                $("#input3").val($("#tel").val());
+                $("#input4").val($(".img-responsive")[0].src);
+                $("#photo").attr("src", $(".img-responsive")[0].src);
+            });
+        };
+    });
+</script>
+

@@ -28,6 +28,7 @@ namespace 竞赛老师系统
         public DbSet<SCS_Catogary> SCS_Catogary { get; set; }
         public DbSet<SCS_Competition> SCS_Competition { get; set; }
         public DbSet<SCS_Login> SCS_Login { get; set; }
+        public DbSet<SCS_SignUp> SCS_SignUp { get; set; }
         public DbSet<SCS_Teacher> SCS_Teacher { get; set; }
         public DbSet<SCS_TeacherLogin> SCS_TeacherLogin { get; set; }
     }

@@ -34,13 +34,33 @@
           <Property Name="密码" Type="varchar" MaxLength="50" />
           <Property Name="姓名" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="SCS_SignUp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="姓名" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="班级" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="学号" Type="int" Nullable="false" />
+          <Property Name="学年成绩" Type="varchar" MaxLength="50" />
+          <Property Name="电话" Type="int" Nullable="false" />
+          <Property Name="比赛项目" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="类别" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="邮箱" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="报名时间" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="团队人员姓名" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="审阅状态" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="SCS_Teacher">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="姓名" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="职工号" Type="varchar" MaxLength="50" />
+          <Property Name="职工号" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="手机号码" Type="int" />
+          <Property Name="邮箱" Type="varchar" MaxLength="50" />
+          <Property Name="办公地址" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="SCS_TeacherLogin">
           <Key>
@@ -55,6 +75,7 @@
           <EntitySet Name="SCS_Catogary" EntityType="Self.SCS_Catogary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SCS_Competition" EntityType="Self.SCS_Competition" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SCS_Login" EntityType="Self.SCS_Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCS_SignUp" EntityType="Self.SCS_SignUp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SCS_Teacher" EntityType="Self.SCS_Teacher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SCS_TeacherLogin" EntityType="Self.SCS_TeacherLogin" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -62,12 +83,20 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="StudentsCompetitionSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="StudentsCompetitionSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SCS_Catogary" EntityType="StudentsCompetitionSystemModel.SCS_Catogary" />
+          <EntitySet Name="SCS_Competition" EntityType="StudentsCompetitionSystemModel.SCS_Competition" />
+          <EntitySet Name="SCS_Login" EntityType="StudentsCompetitionSystemModel.SCS_Login" />
+          <EntitySet Name="SCS_SignUp" EntityType="StudentsCompetitionSystemModel.SCS_SignUp" />
+          <EntitySet Name="SCS_Teacher" EntityType="StudentsCompetitionSystemModel.SCS_Teacher" />
+          <EntitySet Name="SCS_TeacherLogin" EntityType="StudentsCompetitionSystemModel.SCS_TeacherLogin" />
+        </EntityContainer>
         <EntityType Name="SCS_Catogary">
           <Key>
             <PropertyRef Name="类型ID" />
           </Key>
           <Property Name="类型ID" Type="Int32" Nullable="false" />
-          <Property Name="类型名称" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="类型名称" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SCS_Competition">
           <Key>
@@ -75,37 +104,50 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="类型ID" Type="Int32" Nullable="false" />
-          <Property Name="名称" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="学院" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="内容" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="发布时间" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="截止时间" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="逻辑删除" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="名称" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="学院" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="内容" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="发布时间" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="截止时间" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="逻辑删除" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SCS_Login">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="学号" Type="Int32" />
           <Property Name="密码" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="姓名" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SCS_SignUp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="姓名" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="班级" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="学号" Type="Int32" Nullable="false" />
+          <Property Name="学年成绩" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="电话" Type="Int32" Nullable="false" />
+          <Property Name="比赛项目" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="类别" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="邮箱" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="报名时间" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="团队人员姓名" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="审阅状态" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="SCS_Teacher">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="姓名" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="职工号" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="姓名" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="职工号" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="手机号码" Type="Int32" />
+          <Property Name="邮箱" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="办公地址" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="StudentsCompetitionSystemEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="SCS_Catogary" EntityType="Self.SCS_Catogary" />
-          <EntitySet Name="SCS_Competition" EntityType="Self.SCS_Competition" />
-          <EntitySet Name="SCS_Login" EntityType="Self.SCS_Login" />
-          <EntitySet Name="SCS_Teacher" EntityType="Self.SCS_Teacher" />
-          <EntitySet Name="SCS_TeacherLogin" EntityType="StudentsCompetitionSystemModel.SCS_TeacherLogin" />
-        </EntityContainer>
         <EntityType Name="SCS_TeacherLogin">
           <Key>
             <PropertyRef Name="id" />
@@ -124,41 +166,62 @@
           <EntitySetMapping Name="SCS_Catogary">
             <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_Catogary">
               <MappingFragment StoreEntitySet="SCS_Catogary">
-                <ScalarProperty Name="类型ID" ColumnName="类型ID" />
                 <ScalarProperty Name="类型名称" ColumnName="类型名称" />
+                <ScalarProperty Name="类型ID" ColumnName="类型ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SCS_Competition">
             <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_Competition">
               <MappingFragment StoreEntitySet="SCS_Competition">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="类型ID" ColumnName="类型ID" />
-                <ScalarProperty Name="名称" ColumnName="名称" />
-                <ScalarProperty Name="学院" ColumnName="学院" />
-                <ScalarProperty Name="内容" ColumnName="内容" />
-                <ScalarProperty Name="发布时间" ColumnName="发布时间" />
-                <ScalarProperty Name="截止时间" ColumnName="截止时间" />
                 <ScalarProperty Name="逻辑删除" ColumnName="逻辑删除" />
+                <ScalarProperty Name="截止时间" ColumnName="截止时间" />
+                <ScalarProperty Name="发布时间" ColumnName="发布时间" />
+                <ScalarProperty Name="内容" ColumnName="内容" />
+                <ScalarProperty Name="学院" ColumnName="学院" />
+                <ScalarProperty Name="名称" ColumnName="名称" />
+                <ScalarProperty Name="类型ID" ColumnName="类型ID" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SCS_Login">
             <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_Login">
               <MappingFragment StoreEntitySet="SCS_Login">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="学号" ColumnName="学号" />
-                <ScalarProperty Name="密码" ColumnName="密码" />
                 <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="密码" ColumnName="密码" />
+                <ScalarProperty Name="学号" ColumnName="学号" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCS_SignUp">
+            <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_SignUp">
+              <MappingFragment StoreEntitySet="SCS_SignUp">
+                <ScalarProperty Name="审阅状态" ColumnName="审阅状态" />
+                <ScalarProperty Name="团队人员姓名" ColumnName="团队人员姓名" />
+                <ScalarProperty Name="报名时间" ColumnName="报名时间" />
+                <ScalarProperty Name="邮箱" ColumnName="邮箱" />
+                <ScalarProperty Name="类别" ColumnName="类别" />
+                <ScalarProperty Name="比赛项目" ColumnName="比赛项目" />
+                <ScalarProperty Name="电话" ColumnName="电话" />
+                <ScalarProperty Name="学年成绩" ColumnName="学年成绩" />
+                <ScalarProperty Name="学号" ColumnName="学号" />
+                <ScalarProperty Name="班级" ColumnName="班级" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SCS_Teacher">
             <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_Teacher">
               <MappingFragment StoreEntitySet="SCS_Teacher">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="办公地址" ColumnName="办公地址" />
+                <ScalarProperty Name="邮箱" ColumnName="邮箱" />
+                <ScalarProperty Name="手机号码" ColumnName="手机号码" />
                 <ScalarProperty Name="职工号" ColumnName="职工号" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -112,6 +112,9 @@
     <Compile Include="SCS_Login.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="SCS_SignUp.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="SCS_Teacher.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -1,0 +1,107 @@
+﻿@model 竞赛老师系统.SCS_SignUp
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SCS_SignUp</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.姓名)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.姓名)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.班级)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.班级)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.学号)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.学号)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.学年成绩)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.学年成绩)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.电话)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.电话)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.比赛项目)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.比赛项目)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.类别)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.类别)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.邮箱)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.邮箱)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.报名时间)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.报名时间)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.团队人员姓名)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.团队人员姓名)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.审阅状态)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.审阅状态)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

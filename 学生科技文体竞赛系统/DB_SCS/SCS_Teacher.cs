@@ -17,5 +17,8 @@ namespace DB_SCS
         public int id { get; set; }
         public string 姓名 { get; set; }
         public string 职工号 { get; set; }
+        public Nullable<int> 手机号码 { get; set; }
+        public string 邮箱 { get; set; }
+        public string 办公地址 { get; set; }
     }
 }
