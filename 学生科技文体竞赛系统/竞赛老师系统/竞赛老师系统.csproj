@@ -162,6 +162,8 @@
     <Compile Include="Areas\Examinations\ExaminationsAreaRegistration.cs" />
     <Compile Include="Areas\Examination\Controllers\IndexController.cs" />
     <Compile Include="Areas\Examination\ExaminationAreaRegistration.cs" />
+    <Compile Include="Areas\fabu\Controllers\IndexController.cs" />
+    <Compile Include="Areas\fabu\fabuAreaRegistration.cs" />
     <Compile Include="Areas\Home\Controllers\homeController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Areas\Release\Controllers\releaseController.cs" />
@@ -1020,6 +1022,9 @@
     <Content Include="dist\font\summernote.eot" />
     <Content Include="dist\font\summernote.ttf" />
     <Content Include="dist\font\summernote.woff" />
+    <Content Include="Areas\fabu\Views\web.config" />
+    <Content Include="Areas\fabu\Views\Index\Index.cshtml" />
+    <Content Include="Areas\Examination\Views\Index\retreat.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -1072,6 +1077,8 @@
     <Folder Include="Areas\Examinations\Models\" />
     <Folder Include="Areas\Examinations\Views\Shared\" />
     <Folder Include="Areas\Examination\Models\" />
+    <Folder Include="Areas\fabu\Models\" />
+    <Folder Include="Areas\fabu\Views\Shared\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Release\Models\" />
     <Folder Include="Areas\TeacherInfo\Models\" />

@@ -16,14 +16,14 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="名称" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="名称" Type="varchar" MaxLength="50" />
           <Property Name="竞赛名称" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="类别" Type="varchar" MaxLength="50" />
-          <Property Name="内容" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="类别" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="内容" Type="varchar(max)" Nullable="false" />
           <Property Name="发布时间" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="截止时间" Type="varchar" MaxLength="50" />
-          <Property Name="逻辑删除" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="截止时间" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="逻辑删除" Type="varchar" MaxLength="50" />
           <Property Name="职工号" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="SCS_Login">
@@ -106,14 +106,14 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="名称" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="名称" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="竞赛名称" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="类别" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="内容" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="类别" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="内容" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="发布时间" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="截止时间" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="逻辑删除" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="截止时间" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="逻辑删除" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="职工号" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="SCS_Login">
