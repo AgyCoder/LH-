@@ -26,5 +26,6 @@ namespace 竞赛老师系统
         public string 报名时间 { get; set; }
         public string 团队人员姓名 { get; set; }
         public int 审阅状态 { get; set; }
+        public Nullable<int> 职工号 { get; set; }
     }
 }

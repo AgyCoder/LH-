@@ -18,5 +18,6 @@ namespace 竞赛老师系统
         public string 姓名 { get; set; }
         public int 职工号 { get; set; }
         public string 密码 { get; set; }
+        public Nullable<int> 激活状态 { get; set; }
     }
 }

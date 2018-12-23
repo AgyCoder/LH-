@@ -42,15 +42,17 @@ namespace 竞赛老师系统.Controllers
 
             SCS_TeacherLogin sCS_TeacherLogin = db.SCS_TeacherLogin.Where (c=> c.职工号 == username && c.密码 == password).FirstOrDefault();
             if (sCS_TeacherLogin==null ) {
-                string str = "用户名或者密码错误！";
-                ViewBag.error = str;
-                ViewBag.FormAction = "CheckPower";
-                ViewBag.userId = username;
-                return Json(false);
+                return Json(null);
             }
-
-            return Json(true);
+            if (sCS_TeacherLogin.激活状态 == 0)
+            {
+                sCS_TeacherLogin.激活状态 = 1;
+                return Json(0);
+            }
+           
+                return Json(1);
         }
+
         public JsonResult CheckPower_Register(string password_1)
         {
             string password = password_1;

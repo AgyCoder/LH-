@@ -25,6 +25,7 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
             {
                 var list = new List<SCS_SignUp>();
                 var result = from m in db.SCS_SignUp
+                             where m.审阅状态==0
                              select m;
                 foreach (var item in result)
                 {
@@ -35,6 +36,7 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
                         学号 = item.学号,
                         电话 = item.电话,
                         学年成绩 = item.学年成绩,
+                        id=item.id
                     };
                     list.Add(tB);
                 }
@@ -66,14 +68,15 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
                              //select m;
                 foreach (var item in result)
                 {
-                    SCS_SignUp tB = new SCS_SignUp
-                    {
-                        姓名 = item.姓名,
-                        班级 = item.班级,
-                        学号 = item.学号,
-                        电话 = item.电话,
-                        学年成绩 = item.学年成绩,
-                    };
+                    SCS_SignUp tB = new SCS_SignUp();
+                    //{
+                    //    姓名 = item.姓名,
+                    //    班级 = item.班级,
+                    //    学号 = item.学号,
+                    //    电话 = item.电话,
+                    //    学年成绩 = item.学年成绩,
+                    //    id = item.id
+                    //};
                     list.Add(tB);
                 }
 
@@ -104,7 +107,7 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
             db.SaveChanges();
             db.Configuration.ValidateOnSaveEnabled = true;
 
-            return Json(true);
+            return Json(tB.审阅状态);
         }
 
 
