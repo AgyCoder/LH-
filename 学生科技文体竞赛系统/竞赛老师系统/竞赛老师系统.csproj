@@ -164,8 +164,6 @@
     <Compile Include="Areas\Examination\ExaminationAreaRegistration.cs" />
     <Compile Include="Areas\Home\Controllers\homeController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
-    <Compile Include="Areas\Release\Controllers\releaseController.cs" />
-    <Compile Include="Areas\Release\ReleaseAreaRegistration.cs" />
     <Compile Include="Areas\TeacherInfo\Controllers\TeacherInfoController.cs" />
     <Compile Include="Areas\TeacherInfo\TeacherInfoAreaRegistration.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -906,10 +904,6 @@
     <Content Include="css\plugins\footable\fonts\footable.eot" />
     <Content Include="css\plugins\footable\fonts\footable.ttf" />
     <Content Include="css\plugins\footable\fonts\footable.woff" />
-    <Content Include="Areas\Release\Views\web.config" />
-    <Content Include="Areas\Release\Views\Shared\_ViewStart.cshtml" />
-    <Content Include="Areas\Release\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Release\Views\release\Index.cshtml" />
     <Content Include="img\browser.psd" />
     <Content Include="Areas\TeacherInfo\Views\web.config" />
     <Content Include="Areas\TeacherInfo\Views\_ViewStart.cshtml" />
@@ -1073,7 +1067,6 @@
     <Folder Include="Areas\Examinations\Views\Shared\" />
     <Folder Include="Areas\Examination\Models\" />
     <Folder Include="Areas\Home\Models\" />
-    <Folder Include="Areas\Release\Models\" />
     <Folder Include="Areas\TeacherInfo\Models\" />
   </ItemGroup>
   <ItemGroup>
