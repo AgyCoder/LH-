@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace 竞赛老师系统.Areas.Examination.Controllers
 {
-    
+    //进行同步更改
     public class IndexController : Controller
     {
         private StudentsCompetitionSystemEntities db = new StudentsCompetitionSystemEntities();
