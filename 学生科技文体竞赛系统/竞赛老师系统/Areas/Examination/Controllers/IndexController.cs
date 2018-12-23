@@ -57,6 +57,13 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
             return View();
         }
 
+        public ActionResult retreat()
+        {
+
+            return View();
+        }
+
+
         public JsonResult Table_adpot(int limit, int offset)
         {
             try
@@ -91,6 +98,10 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
                 throw new Exception(e.Message);
             }
         }
+
+
+
+
 
         public JsonResult Detailed(int row_id)//详细
         {

@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<meta charset="utf-8">
+
+<link href="~/dist/summernote.css" rel="stylesheet" />
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+<script src="~/dist/summernote.js"></script>
+<script src="~/dist/lang/summernote-zh-CN.js"></script>    <!-- 中文-->
+
+<style>
+    .m {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<script>
+$(function(){
+ $('.summernote').summernote({
+        height: 200,
+        tabsize: 2,
+        lang: 'zh-CN'
+    });
+});
+</script>
+
+
+
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <form>
+                <fieldset>
+                    <legend>表单项</legend> 
+                    <label >比赛项目<input type="text" id="project"/></label>
+                    <label >类别<input type="text" id="category" /></label>
+                    <label>截至时间<input type="text" id="date" /></label>
+                </fieldset>
+            </form>
+
+            <div class="m">
+                <div class="summernote">summernote 2</div>
+            </div>
+        </div>
+
+        <div id="toolbar" class="btn-group">
+            <a class="create">
+                <input type="button" name="submit" id="btn_fabu" class="btn btn-info" value="发布">
+            </a>
+            <input type="button" name="submit" id="Have_P" class="btn btn-info" value="查看">
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+
+    $("#Have_P").click(function () {
+        alert($('.summernote').summernote('code'));
+
+    })
+
+    $('#btn_fabu').click(function () {
+
+        $.ajax({
+            url: "/fabu/Index/Preservation",
+            type: "post",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify({
+                "project": $("#project").val(),
+                "category": $("#category").val(),
+                "content": $('.summernote').summernote('code'),
+                "date": $("#date").val()
+            }),
+            success: function (data) {
+                if (data == 1) {
+                    alert("成功");
+                }
+
+                else {
+                    alert("失败");
+                }
+
+            }
+        });
+    })
+
+</script>

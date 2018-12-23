@@ -204,15 +204,20 @@
         <div class="col-md-8" style="margin-top:10px">
             <input type="text" class="form-control" placeholder="报名人员名称" id="toll">
         </div>
+        
         <div class="col-md-2">
             <input type="button" name="submit" id="search" class="btn btn-info" value="搜索">
         </div>
     </div>
+
     <div id="toolbar" class="btn-group">
         <a href="~/Examination/Index/adopt" class="create">
             <input type="button" name="submit" id="Have_passed" class="btn btn-info" value="查看已通过的">
-        </a> 
-        <input type="button" name="submit" id="Have_P" class="btn btn-info" value="查看">
+        </a>
+        <br />
+        <a href="~/Examination/Index/retreat" class="create">
+            <input type="button" name="submit" id="btn_retreat" class="btn btn-info" value="查看已通过的">
+        </a>
     </div>
 
     <div class="panel panel-default" id="my_tb" style="margin-right:30px;margin-left:20px">
@@ -311,28 +316,6 @@
                 });
             })
 
-            $('#Have_P').click(function () {
-                
-                $.ajax({
-                    url: "/Examination/Index/Via ",
-                    type: "post",
-                    dataType: "json",
-                    contentType: "application/json",
-                    data: JSON.stringify({
-                        "row_id": $("#row.id").val(),
-                    }),
-                    success: function (data) {
-                        if (data!=0) {
-                            alert(data)
-                        }
-                        else {
-                            alert("操作失败！")
-                        }
-
-                    }
-                });
-                
-            });
 
             pass = function (id) {
                 $.ajax({
