@@ -162,6 +162,8 @@
     <Compile Include="Areas\Examinations\ExaminationsAreaRegistration.cs" />
     <Compile Include="Areas\Examination\Controllers\IndexController.cs" />
     <Compile Include="Areas\Examination\ExaminationAreaRegistration.cs" />
+    <Compile Include="Areas\FeedBackMsg\Controllers\MsgController.cs" />
+    <Compile Include="Areas\FeedBackMsg\FeedBackMsgAreaRegistration.cs" />
     <Compile Include="Areas\Home\Controllers\homeController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Areas\TeacherInfo\Controllers\TeacherInfoController.cs" />
@@ -193,6 +195,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SCS_Login.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCS_Message.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCS_Retreat.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SCS_SignUp.cs">
@@ -1014,6 +1022,8 @@
     <Content Include="dist\font\summernote.eot" />
     <Content Include="dist\font\summernote.ttf" />
     <Content Include="dist\font\summernote.woff" />
+    <Content Include="Areas\FeedBackMsg\Views\web.config" />
+    <Content Include="Areas\FeedBackMsg\Views\Msg\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -1066,6 +1076,8 @@
     <Folder Include="Areas\Examinations\Models\" />
     <Folder Include="Areas\Examinations\Views\Shared\" />
     <Folder Include="Areas\Examination\Models\" />
+    <Folder Include="Areas\FeedBackMsg\Models\" />
+    <Folder Include="Areas\FeedBackMsg\Views\Shared\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\TeacherInfo\Models\" />
   </ItemGroup>

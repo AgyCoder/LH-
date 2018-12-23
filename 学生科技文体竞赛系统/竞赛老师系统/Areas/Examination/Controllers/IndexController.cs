@@ -25,9 +25,9 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
             {
                 var list = new List<SCS_SignUp>();
                 var result = from m in db.SCS_SignUp
-                             where m.审阅状态==0
+                             where m.审阅状态 == 0
                              select m;
-                foreach (var item in result)
+                foreach(var item in result)
                 {
                     SCS_SignUp tB = new SCS_SignUp
                     {
@@ -36,7 +36,7 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
                         学号 = item.学号,
                         电话 = item.电话,
                         学年成绩 = item.学年成绩,
-                        id=item.id
+                        id = item.id
                     };
                     list.Add(tB);
                 }
@@ -45,7 +45,7 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
                 var rows = list.Skip(offset).Take(limit).ToList();
                 return Json(new { total = total, rows = rows }, JsonRequestBehavior.AllowGet);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 throw new Exception(e.Message);
             }
@@ -63,10 +63,10 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
             {
                 int user_Login = Convert.ToInt32(Session["username"]);
                 var list = new List<SCS_SignUp>();
-                var result =  db.SCS_SignUp.Where(c => c.审阅状态 == user_Login);
-                             //where m.审阅状态>1
-                             //select m;
-                foreach (var item in result)
+                var result = db.SCS_SignUp.Where(c => c.审阅状态 == user_Login);
+                //where m.审阅状态>1
+                //select m;
+                foreach(var item in result)
                 {
                     SCS_SignUp tB = new SCS_SignUp();
                     //{
@@ -86,7 +86,7 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
                 var rows = list.Skip(offset).Take(limit).ToList();
                 return Json(new { total = total, rows = rows }, JsonRequestBehavior.AllowGet);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 throw new Exception(e.Message);
             }
@@ -112,6 +112,28 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
             return Json(tB.审阅状态);
         }
 
+        public JsonResult back(int id)//退回
+        {
+            SCS_SignUp tB = db.SCS_SignUp.Find(id);
+            tB.审阅状态 = -1;
+            db.Entry(tB).State = EntityState.Modified;
+            db.SaveChanges();
+
+            int teaid = Convert.ToInt32(Session["username"]);
+            var name = db.SCS_TeacherLogin.Where(c => c.职工号 == teaid).First().姓名;
+            SCS_Message msg = new SCS_Message
+            {
+                内容 = "报名申请被退回重填",
+                发件人 = name,
+                时间 = DateTime.Now.ToString()
+            };
+            db.SCS_Message.Add(msg);
+            db.SaveChanges();
+
+
+            return Json(true);
+        }
+
 
         public JsonResult Retreat(int row_id)//退回
         {
@@ -123,7 +145,7 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
             db.Configuration.ValidateOnSaveEnabled = false;
             db.SaveChanges();
             db.Configuration.ValidateOnSaveEnabled = true;
-            
+
 
             return Json(true);
         }
