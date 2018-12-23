@@ -138,5 +138,12 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
 
             return Json(true);
         }
+
+
+        public JsonResult NewEdit(int id)
+        {
+            SCS_SignUp tb = db.SCS_SignUp.Find(id);
+            return Json(tb);
+        }
     }
 }
