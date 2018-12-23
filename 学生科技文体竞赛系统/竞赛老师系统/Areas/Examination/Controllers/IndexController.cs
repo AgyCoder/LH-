@@ -70,6 +70,8 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
                 {
                     SCS_SignUp tB = new SCS_SignUp();
                     //{
+
+
                     //    姓名 = item.姓名,
                     //    班级 = item.班级,
                     //    学号 = item.学号,
@@ -121,6 +123,7 @@ namespace 竞赛老师系统.Areas.Examination.Controllers
             db.Configuration.ValidateOnSaveEnabled = false;
             db.SaveChanges();
             db.Configuration.ValidateOnSaveEnabled = true;
+            
 
             return Json(true);
         }
