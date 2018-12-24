@@ -166,6 +166,7 @@
     <Compile Include="Areas\fabu\fabuAreaRegistration.cs" />
     <Compile Include="Areas\Home\Controllers\homeController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
+    <Compile Include="Areas\TeacherInfo\Controllers\SCS_TeacherController.cs" />
     <Compile Include="Areas\TeacherInfo\Controllers\TeacherInfoController.cs" />
     <Compile Include="Areas\TeacherInfo\TeacherInfoAreaRegistration.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -1019,6 +1020,11 @@
     <Content Include="Areas\fabu\Views\web.config" />
     <Content Include="Areas\fabu\Views\Index\Index.cshtml" />
     <Content Include="Areas\Examination\Views\Index\retreat.cshtml" />
+    <Content Include="Areas\TeacherInfo\Views\SCS_Teacher\Create.cshtml" />
+    <Content Include="Areas\TeacherInfo\Views\SCS_Teacher\Delete.cshtml" />
+    <Content Include="Areas\TeacherInfo\Views\SCS_Teacher\Details.cshtml" />
+    <Content Include="Areas\TeacherInfo\Views\SCS_Teacher\Edit.cshtml" />
+    <Content Include="Areas\TeacherInfo\Views\SCS_Teacher\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />

@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
@@ -102,27 +103,27 @@
         <br />
         <label class="control-label col-sm-1 mylabel" for="txt_search_statu" style="font-size:18px; margin-top: 5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名</label>
         <div class="col-sm-4">
-            <input id="name" name="name" type="text" readonly="readonly" class="form-control fl re-search" style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
+            <input id="name" name="name" type="text"  class="form-control fl re-search" style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
         </div>
         <br />
         <br />
         <br />
         <label class="control-label col-sm-2 mylabel" for="txt_search_statu" style="font-size:18px; margin-top: 5px;">&nbsp;&nbsp;&nbsp;手机号码</label>
         <div class="col-sm-4">
-            <input id="tel" name="tel" type="text" readonly="readonly" class="form-control fl re-search " style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
+            <input id="tel" name="tel" type="text"  class="form-control fl re-search " style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
         </div>
         <br />
         <br />
         <br />
         <label class="control-label col-sm-2 mylabel" for="txt_search_statu" style="font-size:18px; margin-top: 5px;">邮箱</label>
         <div class="col-sm-4">
-            <input id="IDCard" name="IDCard" type="text" readonly="readonly" class="form-control fl re-search" style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
+            <input id="E-mail" name="mail" type="text"  class="form-control fl re-search" style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
         </div>
         <br />
         <br />
         <label class="control-label col-sm-2 mylabel" for="txt_search_statu" style="font-size:18px; margin-top: 5px;">办公地址</label>
         <div class="col-sm-4">
-            <input id="IDCard" name="IDCard" type="text" readonly="readonly" class="form-control fl re-search" style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
+            <input id="Office" name="Office" type="text" class="form-control fl re-search" style="background-color:white; text-align: center;font-size: large; font-weight: bold;" />
         </div>
 
 
@@ -151,224 +152,64 @@
 <script>
     $(document).ready(function () {
 
-        $.ajax({
-            type: "POST",//请求方式
-            url: '/UserInfo/View_UserInfo/Checkpwd',
-            dataType: "json",
-            data: {
-                "pwd": $("#Oldpwd").val(),
-            },
-            success: function (data) {
-                if (data) {
-                    
-                }
-            }
-        });
+        $(function () {
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "postitionClass": "toast-top-full-width",
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
 
-
-
-        $("#btn_edit").click(function () {
-            if (document.all.btn_edit.value == 1) {
-                $.ajax({
-                    type: "POST",//请求方式
-                    url: '/UserInfo/View_UserInfo/Checkpwd',
-                    dataType: "json",
-                    data: {
-                        "pwd": $("#Oldpwd").val(),
-                    },
-                    success: function (data) {
-                        if (data) {
-                            $("#old").hide();
-                            $("#new").show();
-                            $("#_new").show();
-                            document.all.btn_edit.value = "2";
-                        }
-                        else {
-                            $('#Oldpwd').popover('show');
-                            $('#Oldpwd').popover();
-                            var t = setTimeout("$('#Oldpwd').popover('destroy');", 3000);
-                            $("#old").addClass("has-warning");
-                        }
-                    }
-                });
-            }
-            else if (document.all.btn_edit.value == 2 && $("#Newpwd").val() == $("#_Newpwd").val()) {
-                $.ajax({
-                    type: "POST",//请求方式
-                    url: '/UserInfo/View_UserInfo/Edit_pwd',
-                    dataType: "json",
-                    data: {
-                        "pwd": $("#Newpwd").val(),
-                    },
-                    success: function (data) {
-                        if (data) {
-                            $('#queryInfo1').modal('hide');
-                            toastr.success("修改成功");
-                            $("#new").hide();
-                            $("#old").show();
-                            $("#_new").hide();
-                            document.all.btn_edit.value = "1";
-                            $("#old").removeClass("has-warning");
-                            $("#new").removeClass("has-warning");
-                            $("#_new").removeClass("has-warning");
-                            $("#Oldpwd").val("");
-                            $("#Newpwd").val("");
-                            $("#_Newpwd").val("");
-                        }
-
-                    }
-                });
-            }
-            else if ($("#Newpwd").val() != $("#_Newpwd").val()) {
-                $('#_Newpwd').popover('show');
-                $('#_Newpwd').popover();
-                var t = setTimeout("$('#Oldpwd').popover('destroy');", 3000);
-                $("#new").addClass("has-warning");
-                $("#_new").addClass("has-warning");
-                return false;
-            }
-        });
-        $("#myclose").click(function () {
-            for (var r = 1; i <= 5; i++)
-                $("#car" + r).hide();
-        });
-
-
-        $("#my_submit").click(function () {
-            $('#queryInfo3').modal('show');
             $.ajax({
                 type: "POST",//请求方式
-                url: '/UserInfo/View_UserInfo/GetExamineMsg',
+                url: '/TeacherInfo/TeacherInfo/GetMessage',
                 dataType: "json",
-                data: {
-                },
                 success: function (data) {
-                    var num = 1;
-                    var car_num = 1;
-                    for (var r in data) {
-                        var msg = data[r];
-                        var i = 1;
-                        for (var item in data[r]) {
-                            if (num == 1) {
-                                if (i == 5) {
-                                    $("#examine_input" + i).attr("src", msg[item] + '?' + Math.random())
-                                }
-                                else {
-                                    $("#examine_input" + i).val(msg[item]);
+                    $("#name").val(data.姓名);
+                    $("#tel").val(data.手机号码);
+                    $("#E-mail").val(data.邮箱);
+                    $("#Office").val(data.办公地址);
 
-                                }
-                                i++;
-                            }
-                            else {
-                                if (i == 1) {
-                                    $("#car_input" + car_num).val(msg[item]);
-                                }
-                                else if (i == 2) {
-                                    $("#car_f" + car_num).attr("src", msg[item] + '?' + Math.random());
-                                }
-                                else {
-                                    $("#car_b" + car_num).attr("src", msg[item] + '?' + Math.random());
-                                    $("#car" + car_num).show();
-                                }
-                                i++;
-                                if (i > 3) {
-                                    i = 1;
-                                    car_num++;
-                                }
-                            }
-                        }
-                        num++;
-
-                    }
                 }
             });
         });
 
-        $("#my_btn").click(function () {
-            document.all.btn_edit.value = "1";
-            $("#new").hide();
-            $("#old").show();
-            $("#_new").hide();
-            $("#old").removeClass("has-warning");
-            $("#new").removeClass("has-warning");
-            $("#_new").removeClass("has-warning");
-            $("#Oldpwd").val("");
-            $("#Newpwd").val("");
-            $("#_Newpwd").val("");
-            $('#Oldpwd').popover('destroy');
-            $('#_Newpwd').popover('destroy');
-            $('#queryInfo1').modal('show');
-        });
+
+
 
 
         $("#my_Info").click(function () {
-           
-            for (var item = 1; item <= 3; item++) {
-                $("#input" + item).val("");
-                $("#model" + item).removeClass("has-warning");
-                $("#model" + item).removeClass("has-success");
-            }
-            $('#queryInfo2').modal('show');
-            $("#input1").val($("#name").val());
-            $("#input2").val($("#place").val());
-            $("#input3").val($("#tel").val());
-            $("#input4").val($(".img-responsive")[0].src);
-            $("#photo").attr("src", $(".img-responsive")[0].src);
-        });
 
-
-
-
-
-       
-
-
-
-        $("#btn_Info").click(function () {
-            var msg = {
-                姓名: $("#input1").val(),
-                手机号码: $("#input3").val(),
-                籍贯: $("#input2").val(),
-                身份证照片: $("#input4").val(),
-            };
-            var error = 0;
-            for (var item = 1; item <= 3; item++) {
-                var str = "#input" + item;
-                if ($(str).val() == "") {
-                    $("#model" + item).addClass("has-warning");
-                    $(str).popover('show');
-                    $(str).popover();
-                    error++;
-                }
-                else {
-                    $("#model" + item).removeClass("has-warning");
-                    $("#model" + item).addClass("has-success");
-                }
-            }
-            setTimeout("$('#input1').popover('destroy')", 3000);
-            setTimeout("$('#input3').popover('destroy')", 3000);
-            setTimeout("$('#input2').popover('destroy')", 3000);
-            if (error == 0) {
-                $.ajax({
-                    type: "POST",//请求方式
-                    url: '/UserInfo/View_UserInfo/NewEdit',
-                    dataType: "json",
-                    data: {
-                        "msg": msg
-                    },
-                    success: function (data) {
-                        $(".img-responsive").attr("src", data);
-                        $('#queryInfo2').modal('hide');
-                        parent.location.reload();
+            $.ajax({
+                url: "/TeacherInfo/TeacherInfo/GetMessage",
+                type: "post",
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    "name": $("#name").val(),
+                    "tel": $("#tel").val(),
+                    "Email": $("#E-mail").val(),
+                    "Office": $("#Office").val(),
+                }),
+                success: function (data) {
+                    if (data) {
+                        alert("成功修改");
                     }
-                });
-            }
-            else {
-                return false;
-            }
+                    
+                }
+            });
         });
+
 
     });
+  
+  
 </script>
 
 

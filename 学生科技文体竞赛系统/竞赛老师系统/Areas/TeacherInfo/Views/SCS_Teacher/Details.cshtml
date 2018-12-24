@@ -1,0 +1,59 @@
+﻿@model 竞赛老师系统.SCS_Teacher
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SCS_Teacher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.姓名)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.姓名)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.职工号)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.职工号)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.手机号码)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.手机号码)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.邮箱)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.邮箱)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.办公地址)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.办公地址)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
