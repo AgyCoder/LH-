@@ -306,7 +306,7 @@
             operation = function (value, row, index) {
                 return '<input type="button" name="submit" id="bt_Detailed" class="btn btn-primary" onclick="edit(' + value + ')"  value="详细"style="margin-top:0">' +
                     '<input type="button" name="submit" id="bt_Via" class="btn btn-success" onclick="pass(' + value + ')" value="通过"style="margin-top:0">' +
-                    '<input type="button" name="submit" id="bt_Retrea" class="b btn btn-inverse" value="退回"style="margin-top:0">';
+                    '<input type="button" name="submit" id="bt_Retrea" class="b btn btn-danger" onclick="back(' + value + ')"value="退回"style="margin-top:0">';
             }
 
             
@@ -318,7 +318,6 @@
 
 
             pass = function (id) {
-                alert(id);
                 $.ajax({
                     url: "/Examination/Index/Via",
                     type: "post",
@@ -329,6 +328,7 @@
 
                     }),
                     success: function (data) {
+                        $('#tb_departments').bootstrapTable('refresh');
                         if (data) {
                             alert("成功！");
                         }
@@ -339,6 +339,31 @@
                     }
                 });
             }
+
+            back = function (id) {
+                $.ajax({
+                    url: "/Examination/Index/back",
+                    type: "post",
+                    dataType: "json",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        "id": id,
+
+                    }),
+                    success: function (data) {
+                        $('#tb_departments').bootstrapTable('refresh');
+                        if (data) {
+                            alert("成功！");
+                        }
+                        else {
+                            alert("操作失败！");
+                        }
+
+                    }
+                });
+            }
+
+
 
             $('#bt_Retrea').click(function () {
                 alert("成功！");

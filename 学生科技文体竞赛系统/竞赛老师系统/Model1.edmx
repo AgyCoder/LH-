@@ -36,6 +36,26 @@
           <Property Name="姓名" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="激活状态" Type="int" />
         </EntityType>
+        <EntityType Name="SCS_Message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="发件人" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="时间" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="内容" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SCS_Retreat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="学号" Type="int" Nullable="false" />
+          <Property Name="姓名" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="比赛项目" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="类别" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="职工号" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="SCS_SignUp">
           <Key>
             <PropertyRef Name="id" />
@@ -79,6 +99,8 @@
           <EntitySet Name="SCS_Catogary" EntityType="Self.SCS_Catogary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SCS_Competition" EntityType="Self.SCS_Competition" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SCS_Login" EntityType="Self.SCS_Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCS_Message" EntityType="Self.SCS_Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCS_Retreat" EntityType="Self.SCS_Retreat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SCS_SignUp" EntityType="Self.SCS_SignUp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SCS_Teacher" EntityType="Self.SCS_Teacher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SCS_TeacherLogin" EntityType="Self.SCS_TeacherLogin" Schema="dbo" store:Type="Tables" />
@@ -91,9 +113,11 @@
           <EntitySet Name="SCS_Catogary" EntityType="StudentsCompetitionSystemModel.SCS_Catogary" />
           <EntitySet Name="SCS_Competition" EntityType="StudentsCompetitionSystemModel.SCS_Competition" />
           <EntitySet Name="SCS_Login" EntityType="StudentsCompetitionSystemModel.SCS_Login" />
+          <EntitySet Name="SCS_Retreat" EntityType="StudentsCompetitionSystemModel.SCS_Retreat" />
           <EntitySet Name="SCS_SignUp" EntityType="StudentsCompetitionSystemModel.SCS_SignUp" />
           <EntitySet Name="SCS_Teacher" EntityType="StudentsCompetitionSystemModel.SCS_Teacher" />
           <EntitySet Name="SCS_TeacherLogin" EntityType="StudentsCompetitionSystemModel.SCS_TeacherLogin" />
+          <EntitySet Name="SCS_Message" EntityType="StudentsCompetitionSystemModel.SCS_Message" />
         </EntityContainer>
         <EntityType Name="SCS_Catogary">
           <Key>
@@ -125,6 +149,17 @@
           <Property Name="密码" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="姓名" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="激活状态" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SCS_Retreat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="学号" Type="Int32" Nullable="false" />
+          <Property Name="姓名" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="比赛项目" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="类别" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="职工号" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="SCS_SignUp">
           <Key>
@@ -165,6 +200,15 @@
           <Property Name="密码" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="激活状态" Type="Int32" />
         </EntityType>
+        <EntityType Name="SCS_Message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="发件人" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="时间" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="内容" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -200,6 +244,18 @@
                 <ScalarProperty Name="激活状态" ColumnName="激活状态" />
                 <ScalarProperty Name="姓名" ColumnName="姓名" />
                 <ScalarProperty Name="密码" ColumnName="密码" />
+                <ScalarProperty Name="学号" ColumnName="学号" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCS_Retreat">
+            <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_Retreat">
+              <MappingFragment StoreEntitySet="SCS_Retreat">
+                <ScalarProperty Name="职工号" ColumnName="职工号" />
+                <ScalarProperty Name="类别" ColumnName="类别" />
+                <ScalarProperty Name="比赛项目" ColumnName="比赛项目" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
                 <ScalarProperty Name="学号" ColumnName="学号" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
@@ -243,6 +299,16 @@
                 <ScalarProperty Name="密码" ColumnName="密码" />
                 <ScalarProperty Name="职工号" ColumnName="职工号" />
                 <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCS_Message">
+            <EntityTypeMapping TypeName="StudentsCompetitionSystemModel.SCS_Message">
+              <MappingFragment StoreEntitySet="SCS_Message">
+                <ScalarProperty Name="内容" ColumnName="内容" />
+                <ScalarProperty Name="时间" ColumnName="时间" />
+                <ScalarProperty Name="发件人" ColumnName="发件人" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

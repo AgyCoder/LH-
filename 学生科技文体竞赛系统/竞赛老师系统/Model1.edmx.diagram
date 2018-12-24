@@ -8,9 +8,11 @@
         <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_Catogary" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_Competition" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_Login" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_SignUp" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_Teacher" Width="1.5" PointX="2.75" PointY="4.75" />
-        <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_TeacherLogin" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_Retreat" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_SignUp" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_Teacher" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_TeacherLogin" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="StudentsCompetitionSystemModel.SCS_Message" Width="1.5" PointX="5.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
