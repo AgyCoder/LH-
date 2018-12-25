@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Register";
+    Layout = null;
 }
 
 <!doctype html>
@@ -84,10 +85,10 @@
                 }),
                 success: function (data) {
                     if (data) {
-                        window.location.replace("/Login/test");
+                        window.location.replace("/Home/Index/Index");
                     }
                     else {
-                        $("#my_error").text("404错误");
+                        $("#my_error").text("错误");
                     }
 
                 }

@@ -15,8 +15,9 @@ namespace 竞赛学生系统
     public partial class SCS_Login
     {
         public int id { get; set; }
-        public Nullable<int> 学号 { get; set; }
+        public int 学号 { get; set; }
         public string 密码 { get; set; }
         public string 姓名 { get; set; }
+        public Nullable<int> 激活状态 { get; set; }
     }
 }

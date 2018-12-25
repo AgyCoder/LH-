@@ -158,6 +158,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\AddStudents\AddStudentsAreaRegistration.cs" />
+    <Compile Include="Areas\AddStudents\SCS_LoginController.cs" />
+    <Compile Include="Areas\AddTeachers\AddTeachersAreaRegistration.cs" />
+    <Compile Include="Areas\AddTeachers\SCS_TeacherLoginController.cs" />
     <Compile Include="Areas\Examinations\Controllers\SCS_SignUpController.cs" />
     <Compile Include="Areas\Examinations\ExaminationsAreaRegistration.cs" />
     <Compile Include="Areas\Examination\Controllers\IndexController.cs" />
@@ -1035,6 +1039,18 @@
     <Content Include="Areas\TeacherInfo\Views\SCS_Teacher\Details.cshtml" />
     <Content Include="Areas\TeacherInfo\Views\SCS_Teacher\Edit.cshtml" />
     <Content Include="Areas\TeacherInfo\Views\SCS_Teacher\Index.cshtml" />
+    <Content Include="Areas\AddTeachers\Views\web.config" />
+    <Content Include="Areas\AddTeachers\Views\SCS_TeacherLogin\Create.cshtml" />
+    <Content Include="Areas\AddTeachers\Views\SCS_TeacherLogin\Delete.cshtml" />
+    <Content Include="Areas\AddTeachers\Views\SCS_TeacherLogin\Details.cshtml" />
+    <Content Include="Areas\AddTeachers\Views\SCS_TeacherLogin\Edit.cshtml" />
+    <Content Include="Areas\AddTeachers\Views\SCS_TeacherLogin\Index.cshtml" />
+    <Content Include="Areas\AddStudents\Views\web.config" />
+    <Content Include="Areas\AddStudents\Views\SCS_Login\Create.cshtml" />
+    <Content Include="Areas\AddStudents\Views\SCS_Login\Delete.cshtml" />
+    <Content Include="Areas\AddStudents\Views\SCS_Login\Details.cshtml" />
+    <Content Include="Areas\AddStudents\Views\SCS_Login\Edit.cshtml" />
+    <Content Include="Areas\AddStudents\Views\SCS_Login\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -1084,13 +1100,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\AddStudents\Controllers\" />
+    <Folder Include="Areas\AddStudents\Models\" />
+    <Folder Include="Areas\AddStudents\Views\Shared\" />
+    <Folder Include="Areas\AddTeachers\Controllers\" />
+    <Folder Include="Areas\AddTeachers\Models\" />
+    <Folder Include="Areas\AddTeachers\Views\Shared\" />
     <Folder Include="Areas\Examinations\Models\" />
     <Folder Include="Areas\Examinations\Views\Shared\" />
     <Folder Include="Areas\Examination\Models\" />
-    <Folder Include="Areas\FeedBackMsg\Models\" />
-    <Folder Include="Areas\FeedBackMsg\Views\Shared\" />
     <Folder Include="Areas\fabu\Models\" />
     <Folder Include="Areas\fabu\Views\Shared\" />
+    <Folder Include="Areas\FeedBackMsg\Models\" />
+    <Folder Include="Areas\FeedBackMsg\Views\Shared\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\TeacherInfo\Models\" />
   </ItemGroup>

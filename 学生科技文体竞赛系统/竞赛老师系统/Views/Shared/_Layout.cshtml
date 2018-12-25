@@ -21,13 +21,13 @@
     <link href="~/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
     <!-- 全局js -->
     <script src="~/js/jquery.min.js"></script>
-    <script src="~/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="~/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
     <script src="~/js/plugins/layer/layer.min.js"></script>
 
     <!-- 自定义js -->
-    <script src="~/js/hAdmin.js?v=4.1.0"></script>
+    <script src="~/js/hAdmin.js"></script>
     @*<script type="text/javascript" src="~/js/index.js"></script>*@
 
     <!-- 第三方插件 -->
@@ -102,16 +102,23 @@
                             <a href="/Examination/Index/Index"><i class="fa fa-desktop"></i> <span class="nav-label">审核报名</span></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">查看报名进度</span><span class="fa arrow"></span></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">团队管理</span><span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">消息管理</span><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 <li>
                                     <a class="J_menuItem" href="/FeedBackMsg/Msg/Index">收信箱</a>
                                 </li>
 
                             </ul>
+                        </li>
+                        <li class="line dk"></li>
+                        <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                            <span class="ng-scope">录入</span>
+                        </li>
+                        <li>
+                            <a href="/AddStudents/SCS_Login/Index"><i class="fa fa-edit"></i> <span class="nav-label">录入学生</span></a>
+                        </li>
+                        <li>
+                            <a href="/AddTeachers/SCS_TeacherLogin/Index"><i class="fa fa-edit"></i> <span class="nav-label">录入老师</span></a>
                         </li>
                         <li class="line dk"></li>
 

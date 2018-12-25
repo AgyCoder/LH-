@@ -1,0 +1,433 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>学生竞赛系统</title>
+    <meta name="description" content="Moderna Responsive HTML5 Template" />
+    <meta name="author" content="pixel-industry" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/css/960_12_col.css" media="screen" />
+    <link href="~/Areas/Home/css/960_12_col.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Areas/Home/css/reset.css" media="screen" />
+    <link rel="stylesheet" href="~/Areas/Home/css/style.css" media="screen" />
+    <link rel="stylesheet" href="~/Areas/Home/css/anythingslider.css" />
+    <link rel="stylesheet" title="activestyle" href="~/Areas/Home/css/default-blue.css" media="screen" /> <!--default blue color style-->
+    <link rel="stylesheet" href="~/Areas/Home/style-switcher/styleSwitcher.css" media="screen" />
+
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="css/ie7.css" media="screen" />
+    <![endif]-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" href="css/ie8.css" media="screen" />
+    <![endif]-->
+    <!--[if IE 9]>
+    <link rel="stylesheet" href="css/ie9.css" media="screen" />
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- google web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Advent+Pro:400,300,100,200' rel='stylesheet' type='text/css' />
+
+    <!-- js files -->
+    <script src="~/Areas/Home/js/jquery-1.7.2.js"></script> <!-- jQuery 1.7.2 -->
+
+    <script src="~/Areas/Home/js/jquery.tweetscroll.js"></script> <!-- jQuery tweetscroll plugin -->
+    <script src="~/Areas/Home/js/socialstream.jquery.js"></script> <!-- Social Networks Feeds -->
+    <script src="~/Areas/Home/js/jquery.easing.1.2.js"></script><!-- Anything Slider optional plugins -->
+    <script src="~/Areas/Home/js/jquery.anythingslider.min.js"></script><!-- Anything Slider -->
+    <script src="~/Areas/Home/js/jquery.anythingslider.fx.min.js"></script><!-- Anything Slider optional FX extension -->
+    <script src="~/Areas/Home/js/jquery.carouFredSel-5.6.4-packed.js"></script><!-- CarouFredSel carousel plugin -->
+    <script src="~/Areas/Home/js/modernizr.custom.32962.js"></script><!-- Modernizr plugin -->
+    <script src="~/Areas/Home/js/jquery.placeholder.min.js"></script><!-- jQuery Placeholder plugin -->
+    <script src="~/Areas/Home/js/portfolio.js"></script> <!-- portfolio custom options -->
+    <script src="~/Areas/Home/js/include.js"></script> <!-- jQuery custom options -->
+    <script src="~/Areas/Home/style-switcher/styleSwitcher.js"></script><!-- Style Switcher plugin -->
+    <!-- end js files -->
+</head>
+
+<body>
+
+
+    <!-- header wrapper start -->
+    <section id="header-wrapper">
+
+        <!-- header start -->
+        <header id="header" class="clearfix">
+            <!-- logo start -->
+            <section id="logo">
+                <a href="index.html">
+                    logo
+                </a>
+            </section><!-- logo end -->
+            <!--login start-->
+            <section id="loginorregist">
+                <a href="#" class="btn-small style-color">
+                    <span>@Session["username"]</span>
+                </a>
+            </section><!-- login end -->
+            <!-- main navigation container start -->
+            <section id="nav-container">
+
+                <!-- main navigation start  -->
+                <nav id="nav">
+                    <ul>
+                        <li class="active"><a href="index.html">首页</a></li>
+                        <li>
+                            <a href="competition.html">竞赛</a>
+                        </li>
+                        <li>
+                            <a href="#">消息</a>
+                           
+                        </li>
+                        <li>
+                            <a href="#">个人</a>
+                            <ul>
+                                <li><a href="blog.html">修改信息</a></li>
+                                <li><a href="blogsingle.html">修改密码</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav><!-- main navigation end -->
+                <!-- responsive navigation start -->
+                <select id="nav-responsive">
+                    <option selected="" value="" />Site Navigation...
+                    <option value="/Home/Index/Index" />首页
+                    <option value="/Competition/SCS_Competition/Index" />竞赛
+                    <option value="activity3.html" />消息
+                    <option value="activity2.html" />个人
+                    <option value="activity3.html" />修改信息
+                    <option value="activity4.html" />修改密码
+                </select> <!-- responsive navigation end -->
+                <!-- search start -->
+                <section id="search">
+                </section><!-- search end -->
+
+            </section><!-- main navigation container end -->
+
+        </header><!-- header end -->
+    </section><!-- header wrapper end -->
+    <!-- slider start -->
+    <article id="anything-slider">
+        <div class="shadow-top"></div>
+        <section id="slider-container">
+            <ul id="slides">
+                <li class="panel1">
+                    <section class="slide-elements">
+                        <div class="slide-img-container">
+                            <img src="~/Areas/Home/img/slider/slider1.jpg" alt="Slider Image 1" />
+                        </div>
+                    </section>
+                </li>
+                <li class="panel2">
+                    <section class="slide-elements">
+                        <div class="slide-img-container ">
+                            <img src="~/Areas/Home/img/slider/slider2.jpg" alt="Slider Image 2" />
+                        </div>
+                    </section>
+                </li>
+                <li class="panel3">
+                    <section class="slide-elements">
+                        <div class="slide-img-container">
+                            <img src="~/Areas/Home/img/slider/slider3.jpg" alt="Slider Image 3" />
+                        </div>
+                    </section>
+                </li>
+                <li class="panel4">
+                    <section class="slide-elements">
+                        <div class="slide-img-container">
+                            <img src="~/Areas/Home/img/slider/slider4.jpg" alt="Slider Image 4" />
+                        </div>
+                    </section>
+                </li>
+            </ul>
+        </section>
+        <div class="shadow-bottom"></div>
+    </article><!-- slider end -->
+    <!-- content wrapper start -->
+    <section id="content-wrapper">
+
+        <!-- container_12 start -->
+        <section class="container_12">
+
+            <!-- services info start -->
+            <section class="grid_3 services-info" style="margin-top:60px">
+                <h2>推荐竞赛</h2>
+                <a href="about.html" class="find-out-more" style="text-align:center">- 查看更多竞赛 -</a>
+            </section> <!-- services info end -->
+            <!-- services columns start -->
+            <ul class="services-wrap">
+                <li class="grid_3">
+                    <a href="services.html" target="_blank"><img src="~/Areas/Home/img/services/image1.jpg" alt="image1" /> </a>
+                    <span>
+                        <strong>主办方:</strong>
+                    </span>
+                    <span>电子科技大学</span>
+
+                </li>
+
+                <li class="grid_3">
+                    <a href="services.html" target="_blank"><img src="~/Areas/Home/img/services/image2.jpg" alt="image2" /> </a>
+                    <span>
+                        <strong>主办方:</strong>
+                    </span>
+                    <span>电子科技大学</span>
+                </li>
+
+                <li class="grid_3">
+                    <a href="services.html" target="_blank"><img src="~/Areas/Home/img/services/image3.jpg" alt="image3" /> </a>
+                    <span>
+                        <strong>主办方:</strong>
+                    </span>
+                    <span>电子科技大学</span>
+
+                </li>
+            </ul><!-- services columns end -->
+            <!-- ruler start -->
+            <hr class="ruler" /><!-- ruler end -->
+            <!-- portfolio carousel start -->
+            <section class="carousel grid_12">
+
+                <!-- section title start -->
+                <section class="grid_12 section-title">
+
+                    <!-- title start -->
+                    <h6>合作竞赛</h6><!-- title end -->
+                    <!-- portfolio carousel navigation start -->
+                    <ul class="carousel-nav">
+                        <li>
+                            <a class="next" href="#"></a>
+                        </li>
+
+                        <li>
+                            <a class="prev" href="#"></a>
+                        </li>
+                    </ul> <!-- portfolio carousel navigation end -->
+                </section><!-- section title end -->
+                <!-- portfolio items list start -->
+                <section class="jcarousellite">
+                    <ul class="carousel-li">
+                        <li>
+                            <figure class="img-styled sliding">
+                                <div class="img-container" style="width:255px">
+                                    <!-- img start -->
+                                    <img src="~/Areas/Home/img/portfolio/thumb/image1.jpg" width="255" alt="image" /><!-- img end -->
+                                    <!-- img hover effect and lightbox start -->
+                                    <ul class="img-hover">
+                                        <li class="title">
+                                            <a href="http://www.c4top.cn/">进入官网</a>
+                                        </li>
+                                    </ul><!-- img hover effect and lightbox end -->
+                                </div>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure class="img-styled sliding">
+                                <div class="img-container" style="width:255px">
+                                    <!-- img start -->
+                                    <img src="~/Areas/Home/img/portfolio/thumb/image2.jpg" width="255" alt="image" /><!-- img end -->
+                                    <!-- img hover effect and lightbox start -->
+                                    <ul class="img-hover">
+                                        <li class="title">
+                                            <a href="http://www.aidc.org.cn/">进入官网</a>
+                                        </li>
+                                    </ul><!-- img hover effect and lightbox end -->
+                                </div>
+
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure class="img-styled sliding">
+                                <div class="img-container" style="width:255px">
+                                    <!-- img start -->
+                                    <img src="~/Areas/Home/img/portfolio/thumb/image3.jpg" width="255" alt="image" /><!-- img end -->
+                                    <!-- img hover effect and lightbox start -->
+                                    <ul class="img-hover">
+                                        <li class="title">
+                                            <a href="http://www.nactrans.com.cn/">进入官网</a>
+                                        </li>
+                                    </ul><!-- img hover effect and lightbox end -->
+                                </div>
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure class="img-styled sliding">
+                                <div class="img-container" style="width:255px">
+                                    <!-- img start -->
+                                    <img src="~/Areas/Home/img/portfolio/thumb/image4.jpg" width="255" alt="image" /><!-- img end -->
+                                    <!-- img hover effect and lightbox start -->
+                                    <ul class="img-hover">
+                                        <li class="title">
+                                            <a href="activitysingleshowcase.html">This Is Not The End</a>
+                                        </li>
+                                        <li class="portfolio-grid" style="width:255px">
+                                            <a href="http://www.cmathc.cn/">Grid</a>
+                                        </li>
+                                        <li class="portfolio-single">
+                                            <a href="activitysingleshowcase.html">Single</a>
+                                        </li>
+                                    </ul><!-- img hover effect and lightbox end -->
+                                </div>
+
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure class="img-styled sliding">
+                                <div class="img-container" style="width:255px">
+                                    <!-- img start -->
+                                    <img src="~/Areas/Home/img/portfolio/thumb/image5.jpg" width="255" alt="image" /><!-- img end -->
+                                    <!-- img hover effect and lightbox start -->
+                                    <ul class="img-hover">
+                                        <li class="title">
+                                            <a href="http://computergames.caai.cn/">Future Cars</a>
+                                        </li>
+
+
+                                    </ul><!-- img hover effect and lightbox end -->
+                                </div>
+
+                            </figure>
+                        </li>
+
+                        <li>
+                            <figure class="img-styled sliding">
+                                <div class="img-container" style="width:255px">
+                                    <!-- img start -->
+                                    <img src="img/portfolio/thumb/image6.jpg" width="255" alt="image" /><!-- img end -->
+                                    <!-- img hover effect and lightbox start -->
+                                    <ul class="img-hover">
+                                        <li class="title">
+                                            <a href="http://www.mcm.edu.cn/">Daft Punk</a>
+                                        </li>
+                                    </ul><!-- img hover effect and lightbox end -->
+                                </div>
+
+                            </figure>
+                        </li>
+                    </ul>
+                </section>
+            </section><!-- portfolio items list end -->
+            <!-- note start -->
+            <section class="grid_12 note">
+                <!-- note text start -->
+                <span class="text">对网站有疑惑?</span><!-- note text end -->
+                <!-- button big start -->
+                <a href="#" class="btn-small style-color">
+                    <span>联系我们</span>
+                </a><!-- button big end -->
+            </section><!-- note end -->
+
+        </section><!-- container_12 end -->
+
+    </section><!-- content-wrapper end -->
+    <!-- footer start -->
+    <footer id="footer" class="clearfix">
+        <section class="container_12">
+            <div class="ruler"></div>
+
+            <!-- text article start -->
+            <article class="grid_3">
+                <h6>SHORT ABOUT US</h6>
+                <p>We are pixel-industry, young innovative team based in Croatia with great need for developing beautiful, modern, professional responsive websites following the newest web trends.</p>
+
+                <a href="about.html" class="find-out-more">- Find out more -</a>
+            </article><!-- text article end -->
+            <!-- tweeter feed start -->
+            <article class="grid_3 tweets-feed">
+                <h6>TWITTER</h6>
+                <div class="tweets-list-container">
+                </div>
+            </article><!-- tweeter feed end -->
+            <!-- Pinterest feed start -->
+            <article class="grid_3 social-feed pinterest-feed">
+                <h6>PINTEREST</h6>
+            </article><!-- Pinterest feed end -->
+            <!-- contact section start -->
+            <article class="grid_3">
+                <h6>CONTACT</h6>
+                <p>Address: 1600 New Street on The Block<br /> Mountain View, CA Beverly 90210</p>
+                <br />
+                <p>Phone: +381 22626 465</p>
+                <br />
+                <a href="#">E-mail: info@moderna.com</a>
+            </article><!-- contact section end -->
+
+            <div class="ruler bottom"></div>
+        </section>
+
+        <!-- copyright start -->
+        <section class="container_12 clearfix">
+            <section class="copyright">
+                <p>&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></span></p>
+                <a class="to-top-link"><img src="img/to-top.png" class="to-top" alt="back to top" /></a>
+            </section>
+        </section><!-- copyright end -->
+    </footer><!-- footer end -->
+
+    <script>
+        $(function () {
+            $('#slides') // Using FX base effects
+                .anythingSlider({
+                    resizeContents: true,
+                    expand: true,
+                    buildArrows: true,
+                    buildNavigation: true,
+                    buildStartStop: false,
+                    autoPlay: false,
+                    delay: 5000
+                })
+                .anythingSliderFx({
+                    // base FX definitions
+                    // '.selector' : [ 'effect(s)', 'size', 'time', 'easing' ]
+                    // 'size', 'time' and 'easing' are optional parameters, but must be kept in order if added
+
+                    '.panel1 .slide-img-container': ['left', '1040px', '1000', 'easeOutCirc'],
+                    '.panel1 h3': ['right', '640px', '500', 'easeInOutCirc'],
+                    '.panel1 p': ['right', '640px', '1000', 'easeInOutCirc'],
+                    '.panel1 a': ['right', '640px', '1200', 'easeInOutCirc'],
+                    '.panel2 .slide-img-container': ['bottom', '1040px', '1000', 'easeOutCirc'],
+                    '.panel2 h3': ['top', '640px', '500', 'easeInOutCirc'],
+                    '.panel2 p': ['top', '640px', '1000', 'easeInOutCirc'],
+                    '.panel2 a': ['top', '840px', '1200', 'easeInOutCirc'],
+                    '.panel3 blockquote': ['right', '640px', '100', 'easeInOutCirc'],
+                    '.panel3 p': ['right', '640px', '1500', 'easeInOutCirc']
+                });
+            //	Variable number of visible items with variable sizes
+            $('.carousel-li').carouFredSel({
+                items: 4,
+                height: 161,
+                prev: '.prev',
+                next: '.next',
+                auto: false,
+                scroll: 1
+            });
+
+        });
+    </script>
+    <div style="display:none">
+        <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+    </div>
+</body>
+
+
+
+

@@ -47,6 +47,9 @@ namespace 竞赛老师系统.Controllers
             if (sCS_TeacherLogin.激活状态 == 0)
             {
                 sCS_TeacherLogin.激活状态 = 1;
+                db.SCS_TeacherLogin.Add(sCS_TeacherLogin);
+                db.SaveChanges();
+
                 return Json(0);
             }
            

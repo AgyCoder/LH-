@@ -1,0 +1,100 @@
+﻿@model IEnumerable<竞赛学生系统.SCS_SignUp>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.姓名)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.班级)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.学号)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.学年成绩)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.电话)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.比赛项目)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.类别)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.邮箱)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.报名时间)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.团队人员姓名)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.审阅状态)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.职工号)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.姓名)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.班级)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.学号)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.学年成绩)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.电话)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.比赛项目)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.类别)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.邮箱)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.报名时间)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.团队人员姓名)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.审阅状态)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.职工号)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -15,12 +15,13 @@ namespace 竞赛学生系统
     public partial class SCS_Competition
     {
         public int id { get; set; }
-        public int 类型ID { get; set; }
         public string 名称 { get; set; }
-        public string 学院 { get; set; }
+        public string 竞赛名称 { get; set; }
+        public string 类别 { get; set; }
         public string 内容 { get; set; }
         public string 发布时间 { get; set; }
         public string 截止时间 { get; set; }
         public string 逻辑删除 { get; set; }
+        public int 职工号 { get; set; }
     }
 }

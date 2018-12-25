@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -41,14 +40,19 @@ namespace 竞赛学生系统.Controllers
             SCS_Login sCS_Login = db.SCS_Login.Where(c => c.学号 == username && c.密码 == password).FirstOrDefault();
             if (sCS_Login == null)
             {
-                string str = "用户名或者密码错误！";
-                ViewBag.error = str;
-                ViewBag.FormAction = "CheckPower";
-                ViewBag.userId = username;
-                return Json(false);
+                return Json(null);
+            }
+            if (sCS_Login.激活状态 == 0)
+            {
+                sCS_Login.激活状态 = 1;
+                db.SCS_Login.Add(sCS_Login);
+                db.SaveChanges();
+
+                return Json(0);
             }
 
-            return Json(true);
+            return Json(1);
+            
         }
         public JsonResult CheckPower_Register(string password_1)
         {
