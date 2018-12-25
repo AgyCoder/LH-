@@ -70,16 +70,18 @@
         <!-- header start -->
         <header id="header" class="clearfix">
             <!-- logo start -->
-            <section id="logo">
-                <a href="index.html">
-                    logo
-                </a>
-            </section><!-- logo end -->
+            <a href="/Home/Index/Index"><h1>学生文体科技竞赛系统</h1></a><!-- logo end -->
+            
             <!--login start-->
             <section id="loginorregist">
+                <span>欢迎!@Session["username"]</span>
                 <a href="#" class="btn-small style-color">
-                    <span>@Session["username"]</span>
+                    <span>注册</span>
                 </a>
+                <a href="#" class="btn-small style-color">
+                    <span>登录</span>
+                </a>
+
             </section><!-- login end -->
             <!-- main navigation container start -->
             <section id="nav-container">
@@ -87,16 +89,17 @@
                 <!-- main navigation start  -->
                 <nav id="nav">
                     <ul>
-                        <li class="active"><a href="index.html">首页</a></li>
-                        <li>
-                            <a href="competition.html">竞赛</a>
+                        <li class="active">
+                            <a href="/Home/Index/Index">首页</a>                            
                         </li>
                         <li>
-                            <a href="#">消息</a>
-                           
+                            <a href="/Competition/SCS_Competition/Index">竞赛</a>
                         </li>
                         <li>
-                            <a href="#">个人</a>
+                            <a href="/Information/Index/Index">消息</a>                           
+                        </li>
+                        <li>
+                            <a href="#">个人信息</a>
                             <ul>
                                 <li><a href="blog.html">修改信息</a></li>
                                 <li><a href="blogsingle.html">修改密码</a></li>
@@ -106,11 +109,11 @@
                 </nav><!-- main navigation end -->
                 <!-- responsive navigation start -->
                 <select id="nav-responsive">
-                    <option selected="" value="" />Site Navigation...
+                    <option selected="" value="" />请选择
                     <option value="/Home/Index/Index" />首页
                     <option value="/Competition/SCS_Competition/Index" />竞赛
-                    <option value="activity3.html" />消息
-                    <option value="activity2.html" />个人
+                    <option value="/Information/Index/Index" />消息                 
+                    <option value="/Information/Index/Index"/>个人信息
                     <option value="activity3.html" />修改信息
                     <option value="activity4.html" />修改密码
                 </select> <!-- responsive navigation end -->
@@ -168,7 +171,7 @@
             <!-- services info start -->
             <section class="grid_3 services-info" style="margin-top:60px">
                 <h2>推荐竞赛</h2>
-                <a href="about.html" class="find-out-more" style="text-align:center">- 查看更多竞赛 -</a>
+                <a href="/Competition/SCS_Competition/Index" class="find-out-more" style="text-align:center">- 查看更多竞赛 -</a>
             </section> <!-- services info end -->
             <!-- services columns start -->
             <ul class="services-wrap">
@@ -276,13 +279,7 @@
                                     <!-- img hover effect and lightbox start -->
                                     <ul class="img-hover">
                                         <li class="title">
-                                            <a href="activitysingleshowcase.html">This Is Not The End</a>
-                                        </li>
-                                        <li class="portfolio-grid" style="width:255px">
-                                            <a href="http://www.cmathc.cn/">Grid</a>
-                                        </li>
-                                        <li class="portfolio-single">
-                                            <a href="activitysingleshowcase.html">Single</a>
+                                            <a href="http://computergames.caai.cn/">进入官网</a>
                                         </li>
                                     </ul><!-- img hover effect and lightbox end -->
                                 </div>
@@ -298,7 +295,7 @@
                                     <!-- img hover effect and lightbox start -->
                                     <ul class="img-hover">
                                         <li class="title">
-                                            <a href="http://computergames.caai.cn/">Future Cars</a>
+                                            <a href="http://computergames.caai.cn/">进入官网</a>
                                         </li>
 
 
@@ -312,11 +309,11 @@
                             <figure class="img-styled sliding">
                                 <div class="img-container" style="width:255px">
                                     <!-- img start -->
-                                    <img src="img/portfolio/thumb/image6.jpg" width="255" alt="image" /><!-- img end -->
+                                    <img src="~/Areas/Home/img/portfolio/thumb/image6.jpg" width="255" alt="image" /><!-- img end -->
                                     <!-- img hover effect and lightbox start -->
                                     <ul class="img-hover">
                                         <li class="title">
-                                            <a href="http://www.mcm.edu.cn/">Daft Punk</a>
+                                            <a href="http://www.mcm.edu.cn/">进入官网</a>
                                         </li>
                                     </ul><!-- img hover effect and lightbox end -->
                                 </div>
